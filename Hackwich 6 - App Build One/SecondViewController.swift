@@ -9,10 +9,24 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    
+    @IBOutlet weak var answerQueryLabel: UILabel!
+    
+    @IBOutlet weak var answerResultLabel: UILabel!
+    
+    
+    @IBOutlet weak var calculateButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        calculateButton.setTitle( "Calculate", for: .normal)
+        answerQueryLabel.text = "The Answer is:"
+        answerResultLabel.isHidden = true
+        
+        
     }
     
 
@@ -26,4 +40,20 @@ class SecondViewController: UIViewController {
     }
     */
 
+    @IBAction func calculateButtonPressed(_ sender: Any) {
+        answerResultLabel.isHidden = false
+        let numberOne = 10
+        let numberTwo = 20
+        let calculationResult = numberOne * numberTwo
+        answerResultLabel.text = "\(calculationResult)"
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

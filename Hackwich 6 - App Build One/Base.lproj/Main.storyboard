@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JdG-A3-Eul">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
@@ -8,37 +8,117 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Calculator-->
         <scene sceneID="8Bq-Ce-NJ5">
             <objects>
                 <viewController id="s6Z-R8-94j" customClass="SecondViewController" customModule="Hackwich_6___App_Build_One" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yCl-Df-tV8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8q-9y-9pY">
+                                <rect key="frame" x="159" y="605" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="calculateButtonPressed:" destination="s6Z-R8-94j" eventType="touchUpInside" id="RoH-o0-iCM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-rK-pWI">
+                                <rect key="frame" x="29.666666666666671" y="275" width="155" height="20.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="bCI-xr-DyF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McJ-0N-uBn">
+                                <rect key="frame" x="305.66666666666669" y="275" width="41.333333333333314" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="elv-OH-G9m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="elv-OH-G9m" firstAttribute="bottom" secondItem="B8q-9y-9pY" secondAttribute="bottom" constant="95" id="0OE-5O-E5W"/>
+                            <constraint firstItem="cdh-rK-pWI" firstAttribute="top" secondItem="elv-OH-G9m" secondAttribute="top" constant="157" id="Cq4-h6-z9a"/>
+                            <constraint firstItem="B8q-9y-9pY" firstAttribute="centerX" secondItem="yCl-Df-tV8" secondAttribute="centerX" id="F2B-Fr-0pW"/>
+                            <constraint firstItem="B8q-9y-9pY" firstAttribute="top" secondItem="elv-OH-G9m" secondAttribute="top" constant="487" id="Hpd-bS-zL0"/>
+                            <constraint firstItem="cdh-rK-pWI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="elv-OH-G9m" secondAttribute="leading" id="IuZ-Aa-kRR"/>
+                            <constraint firstItem="elv-OH-G9m" firstAttribute="trailing" secondItem="McJ-0N-uBn" secondAttribute="trailing" constant="46" id="g9n-pi-EVP"/>
+                            <constraint firstItem="McJ-0N-uBn" firstAttribute="leading" secondItem="cdh-rK-pWI" secondAttribute="trailing" constant="121" id="lIN-ay-qAY"/>
+                            <constraint firstItem="cdh-rK-pWI" firstAttribute="baseline" secondItem="McJ-0N-uBn" secondAttribute="baseline" id="xDI-A6-wwQ"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="fZe-i7-KHH"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="numbers.rectangle.fill" catalog="system" id="fZe-i7-KHH"/>
+                    <connections>
+                        <outlet property="answerQueryLabel" destination="cdh-rK-pWI" id="ZUy-It-Mb5"/>
+                        <outlet property="answerResultLabel" destination="McJ-0N-uBn" id="FT8-8I-0KY"/>
+                        <outlet property="calculateButton" destination="B8q-9y-9pY" id="iNd-yx-NmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOn-23-VfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370" y="406"/>
+            <point key="canvasLocation" x="368.70229007633588" y="405.63380281690144"/>
         </scene>
-        <!--Item 1-->
+        <!--UHWO Info-->
         <scene sceneID="I5w-7z-ghr">
             <objects>
                 <viewController id="TVF-Qj-Aio" customClass="ViewController" customModule="Hackwich_6___App_Build_One" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWu-9w-oZE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCa-lC-ZGQ">
+                                <rect key="frame" x="82" y="261" width="229" height="173"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="las-LK-Qf4">
+                                <rect key="frame" x="58" y="638" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="uhwoButtonPressed:" destination="TVF-Qj-Aio" eventType="touchUpInside" id="8ma-JD-zFn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INS-lF-l8m">
+                                <rect key="frame" x="279" y="638" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="acmButtonPressed:" destination="TVF-Qj-Aio" eventType="touchUpInside" id="gwH-Ap-xjy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="frl-UI-MBp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="INS-lF-l8m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="las-LK-Qf4" secondAttribute="trailing" constant="8" symbolic="YES" id="5Uj-d2-cl1"/>
+                            <constraint firstItem="frl-UI-MBp" firstAttribute="bottom" secondItem="INS-lF-l8m" secondAttribute="bottom" constant="62" id="6j6-Dr-DBA"/>
+                            <constraint firstItem="frl-UI-MBp" firstAttribute="trailing" secondItem="INS-lF-l8m" secondAttribute="trailing" constant="39" id="8n5-Jj-beJ"/>
+                            <constraint firstItem="frl-UI-MBp" firstAttribute="bottom" secondItem="wCa-lC-ZGQ" secondAttribute="bottom" constant="301" id="EVx-CK-CHb"/>
+                            <constraint firstItem="INS-lF-l8m" firstAttribute="baseline" secondItem="las-LK-Qf4" secondAttribute="baseline" id="IF2-Ud-Nhb"/>
+                            <constraint firstItem="wCa-lC-ZGQ" firstAttribute="leading" secondItem="frl-UI-MBp" secondAttribute="leading" constant="82" id="JdC-r4-AgC"/>
+                            <constraint firstItem="las-LK-Qf4" firstAttribute="leading" secondItem="frl-UI-MBp" secondAttribute="leading" constant="58" id="bOS-X6-hlz"/>
+                            <constraint firstItem="wCa-lC-ZGQ" firstAttribute="centerX" secondItem="MWu-9w-oZE" secondAttribute="centerX" id="eeM-1J-JJP"/>
+                            <constraint firstItem="wCa-lC-ZGQ" firstAttribute="top" secondItem="frl-UI-MBp" secondAttribute="top" constant="143" id="jen-s9-npb"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="nnD-Ge-a2c"/>
+                    <tabBarItem key="tabBarItem" title="UHWO Info" image="info.circle" catalog="system" id="nnD-Ge-a2c"/>
+                    <connections>
+                        <outlet property="aboutACMButton" destination="INS-lF-l8m" id="K3H-VI-uYb"/>
+                        <outlet property="aboutUHWOButton" destination="las-LK-Qf4" id="Ae1-r1-TBg"/>
+                        <outlet property="textBoxLabel" destination="wCa-lC-ZGQ" id="rFc-qd-JvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOl-5s-kg0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="-295"/>
+            <point key="canvasLocation" x="324.4274809160305" y="-295.07042253521126"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AV3-OK-FgL">
@@ -60,6 +140,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
+        <image name="numbers.rectangle.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
