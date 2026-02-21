@@ -46,6 +46,9 @@ class SecondViewController: UIViewController {
         let numberTwo = 20
         let calculationResult = numberOne * numberTwo
         answerResultLabel.text = "\(calculationResult)"
+        view.backgroundColor = .systemPink
+        
+        
     }
     
     
